@@ -153,6 +153,6 @@ app.post("/:template/delete", async (req,res) => {
 
 
 
-app.listen(3000, function(){
-    console.log("server running")
-})
+app.listen(Process.env.PORT || 3000, () => {
+    console.log("Server started on port 3000");
+} )
