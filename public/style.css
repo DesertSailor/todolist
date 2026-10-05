@@ -1,0 +1,162 @@
+/* Universal Reset & Variables */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --bg-body: #f9fafb;
+  --bg-card: #ffffff;
+  --border-color: #e5e7eb;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+/* Layout Container */
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.section-card {
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   List Styles
+   ========================================================================== */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+  padding-left: 0.25rem;
+}
+
+/* Modern colored bullets using the ::marker pseudo-element */
+ul::marker, ol::marker {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Unordered List spacing alternative */
+ul {
+  list-style-type: disc;
+}
+
+/* Ordered List styling */
+ol {
+  list-style-type: decimal;
+}
+
+/* ==========================================================================
+   Form Styles
+   ========================================================================== */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus indicator for better user accessibility */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Form Actions & Button */
+.form-actions {
+  margin-top: 1.5rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+/* Target the <span> directly after a checked checkbox */
+input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: #09e44a;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}

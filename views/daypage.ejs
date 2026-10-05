@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Days of the week</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1>Today is <%= day %></h1>
+
+        <ul>
+            <% for (const task of tasks) { %>
+                <form action="/delete" method="post">
+                    <label>
+                <input type="checkbox" name="task" value="<%= task.task %>"  onclick="this.form.submit()">
+                
+                
+                
+               <span><%= task.task %></span>
+            </label>
+                </form>
+                
+            <% } %>
+        </ul>
+        <form action="/" method="POST">
+            <input type="text" name="task" placeholder="Enter a task">
+            <button type="submit">Add Task</button>
+        </form>
+        </div>
+
+    </body>
+
+</html>
